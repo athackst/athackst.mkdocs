@@ -1,0 +1,37 @@
+theme:
+  name: "material"
+  palette:
+    primary: green
+    accent: green
+
+plugins:
+  - simple
+  - search
+  - mkdocstrings:
+      default_handler: python
+  - awesome-pages:
+      collapse_single_pages: true
+  - macros
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/althack
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/u/athackst
+    - icon: fontawesome/regular/laugh
+      link: https://allisonthackston.com
+
+edit_uri: ""
+google_analytics:
+  - UA-131243656-1
+  - auto
