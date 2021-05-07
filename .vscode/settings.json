@@ -1,0 +1,8 @@
+{
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "yaml.customTags": [
+      "tag:yaml.org,2002:python/name:materialx.emoji.twemoji",
+      "tag:yaml.org,2002:python/name:materialx.emoji.to_svg"
+    ]
+}
