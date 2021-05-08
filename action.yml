@@ -1,0 +1,7 @@
+name: 'athackst mkdocs'
+description: 'Action to use unified settings for my repo'
+runs:
+  using: "composite"
+  steps:
+    - run: cp -r ${{ github.action_path }}/* .
+      shell: bash
