@@ -11,7 +11,6 @@ plugins:
       default_handler: python
   - awesome-pages:
       collapse_single_pages: true
-  - macros
 
 markdown_extensions:
   - admonition
