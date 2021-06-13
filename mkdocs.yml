@@ -30,8 +30,6 @@ extra:
       link: https://hub.docker.com/u/athackst
     - icon: fontawesome/regular/laugh
       link: https://allisonthackston.com
-
-edit_uri: ""
-google_analytics:
-  - UA-131243656-1
-  - auto
+  analytics:
+    provider: google
+    property: UA-131243656-1
