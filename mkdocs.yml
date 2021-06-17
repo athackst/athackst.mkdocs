@@ -1,9 +1,3 @@
-theme:
-  name: "material"
-  palette:
-    primary: green
-    accent: green
-
 plugins:
   - simple
   - search
@@ -11,7 +5,11 @@ plugins:
       default_handler: python
   - awesome-pages:
       collapse_single_pages: true
-
+theme:
+  name: material
+  palette:
+    primary: green
+    accent: green
 markdown_extensions:
   - admonition
   - pymdownx.superfences
@@ -26,7 +24,7 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/althack
     - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/u/athackst
+      link: https://hub.docker.com/u/althack
     - icon: fontawesome/regular/laugh
       link: https://allisonthackston.com
   analytics:
