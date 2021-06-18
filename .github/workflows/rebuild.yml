@@ -1,0 +1,29 @@
+# This workflow rebuilds docs that use this configuration as a template.
+# This ensures that downstream repositories are updated when the configuration changes.
+name: Rebuild Docs
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  rebuild-docs:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repository:
+          - athackst/deepracer_dockerfiles
+          - athackst/dockerfiles
+          - athackst/htmlproofer-action
+          - athackst/ignition_vs_gazebo
+          - athackst/workstation_setup
+      fail-fast: false
+    steps:
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          repository: ${{ matrix.repository }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          event-type: publish-docs
