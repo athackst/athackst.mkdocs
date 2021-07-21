@@ -1,5 +1,5 @@
 mkdocs-awesome-pages-plugin==2.5.0
 mkdocs-macros-plugin==0.5.12
-mkdocs-material==7.1.10
+mkdocs-material==7.1.11
 mkdocs==1.2.1
 mkdocstrings==0.15.2
