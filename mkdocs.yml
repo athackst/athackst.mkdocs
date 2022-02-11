@@ -27,11 +27,11 @@ extra:
       link: https://twitter.com/althack
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/u/althack
-    - icon: fontawesome/regular/laugh
+    - icon: fontawesome/regular/face-laugh
       link: https://allisonthackston.com
   analytics:
     provider: google
-    property: UA-131243656-1
+    property: G-VPNW28KW9L
 extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
