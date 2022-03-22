@@ -22,7 +22,7 @@ jobs:
       fail-fast: false
     steps:
       - name: Repository Dispatch
-        uses: peter-evans/repository-dispatch@v1
+        uses: peter-evans/repository-dispatch@v2
         with:
           repository: ${{ matrix.repository }}
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
