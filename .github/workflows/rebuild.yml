@@ -19,6 +19,7 @@ jobs:
           - athackst/htmlproofer-action
           - athackst/ignition_vs_gazebo
           - athackst/workstation_setup
+          - athackst/vscode-ament-task-provider
       fail-fast: false
     steps:
       - name: Repository Dispatch

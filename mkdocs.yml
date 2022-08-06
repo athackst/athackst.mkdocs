@@ -32,6 +32,8 @@ extra:
   analytics:
     provider: google
     property: G-VPNW28KW9L
+  version:
+    provider: mike
 extra_javascript:
   - javascripts/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
