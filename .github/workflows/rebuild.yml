@@ -9,17 +9,24 @@ on:
   workflow_dispatch:
 
 jobs:
+  get-repos:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.list.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - id: list
+        run: echo "::set-output name=matrix::$(.github/get_repos.sh)"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get matrix
+        run: echo "The matrix is ${{ steps.list.outputs.matrix }}"
   rebuild-docs:
+    needs: get-repos
     runs-on: ubuntu-latest
     strategy:
-      matrix:
-        repository:
-          - athackst/deepracer_dockerfiles
-          - athackst/dockerfiles
-          - athackst/htmlproofer-action
-          - athackst/ignition_vs_gazebo
-          - athackst/workstation_setup
-          - athackst/vscode-ament-task-provider
+      matrix: ${{ fromJSON(needs.get-repos.outputs.matrix) }}
       fail-fast: false
     steps:
       - name: Repository Dispatch
