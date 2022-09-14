@@ -10,6 +10,11 @@
 			"VARIANT": "3"
 		}
 	},
+	// Mount local aliases if any
+	"mounts": [
+		"source=/${env:HOME}/.bash_aliases,target=/home/vscode/.bash_aliases,type=bind,consistency=cached",
+		"source=/${env:HOME}/.aliases,target=/home/vscode/.aliases,type=bind,consistency=cached"
+	],
 	"remoteEnv": {
 		"PATH":"${containerEnv:PATH}:/home/vscode/.local/bin"
 	},
@@ -41,7 +46,8 @@
 		"redhat.vscode-yaml",
 		"znck.grammarly",
 		"yzhang.markdown-all-in-one",
-		"shakram02.bash-beautify"
+		"shakram02.bash-beautify",
+		"eamodio.gitlens"
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "pip install --upgrade pip && pip install --user -r requirements.txt",

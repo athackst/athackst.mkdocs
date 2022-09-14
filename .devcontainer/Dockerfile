@@ -13,15 +13,16 @@ RUN wget -qO - https://raw.githubusercontent.com/yarnpkg/releases/gh-pages/debia
 ENV DEBIAN_FRONTEND=noninteractive
 ENV GEM_HOME="/usr/local/bundle"
 ENV PATH $GEM_HOME/bin:$GEM_HOME/gems/bin:$PATH
-RUN apt-get update \
-   && apt-get -y install --no-install-recommends bats gcc \
+RUN curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+   && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+   && sudo apt-get update \
+   && sudo apt-get -y install --no-install-recommends gcc gh wget\
    # Ruby for html-proofer
    && apt-get install -y --no-install-recommends ruby ruby-dev \
    && gem install html-proofer \
    # git settings
-   && apt-get install -y --no-install-recommends wget \
-   && wget -O /etc/profile.d/git_aliases.sh https://github.com/athackst/workstation_setup/raw/main/user/.aliases/git_aliases.sh \
-   && echo "source /etc/profile.d/git_aliases.sh" >> /home/vscode/.bashrc \
+   && echo "if [ -f /workspaces/athackst.mkdocs/.env ]; then set -a; source /workspaces/athackst.mkdocs/.env; set +a; fi" >> /home/vscode/.bashrc \
    # Clean up
    && apt-get autoremove -y \
    && apt-get clean -y \
