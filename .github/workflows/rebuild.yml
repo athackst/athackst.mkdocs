@@ -12,21 +12,23 @@ jobs:
   get-repos:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.list.outputs.matrix }}
+      repository: ${{ steps.list.outputs.repository }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - id: list
-        run: echo "::set-output name=matrix::$(.github/get_repos.sh)"
+      - name: Get repos list
+        id: list
+        uses: ./.github/actions/list-repos
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Get matrix
-        run: echo "The matrix is ${{ steps.list.outputs.matrix }}"
+      - name: Echo
+        run: echo "The repositories are ${{ steps.list.outputs.repository }}"
   rebuild-docs:
     needs: get-repos
     runs-on: ubuntu-latest
     strategy:
-      matrix: ${{ fromJSON(needs.get-repos.outputs.matrix) }}
+      matrix: 
+        repository: ${{ fromJSON(needs.get-repos.outputs.repository) }}
       fail-fast: false
     steps:
       - name: Repository Dispatch

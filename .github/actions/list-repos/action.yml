@@ -1,0 +1,40 @@
+name: repository-list
+author: Allison Thackston
+description: Get a list of repositories for a user
+inputs:
+  user:
+    description: "Username for repositories"
+    required: false
+    default: ${{ github.repository_owner }}
+  private:
+    description: "Include private repositories"
+    required: false
+    default: "false"
+  archived:
+    description: "Include archived repositories"
+    required: false
+    default: "false"
+  fork:
+    description: "Include forks"
+    required: false
+    default: "false"
+outputs:
+  repository:
+    description: "The list of repositories"
+    value: "${{ steps.get-repos.outputs.repository }}"
+runs:
+  using: "composite"
+  steps:
+    - id: get-repos
+      run: |
+        echo "::set-output name=repository::$(.github/actions/list-repos/get_repos.sh)"
+      shell: bash
+      env:
+        USER: ${{inputs.user}}
+        PRIVATE: ${{inputs.private}}
+        FORK: ${{inputs.fork}}
+        ARCHIVED: ${{inputs.archived}}
+
+branding:
+  icon: "disc"
+  color: "blue"
