@@ -1,4 +1,5 @@
 #!/bin/bash
-cp ${{ github.action_path }}/mkdocs.yml .
-cp -r ${{ github.action_path }}/overrides .
-cat ${{ github.action_path }}/requirements.txt  >> requirements.txt
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cp $DIR/mkdocs.yml .
+cp -r $DIR/overrides .
+cat $DIR/requirements.txt  >> requirements.txt
