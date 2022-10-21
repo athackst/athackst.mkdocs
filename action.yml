@@ -3,5 +3,5 @@ description: 'Action to use unified settings for my repo'
 runs:
   using: "composite"
   steps:
-    - run: cp -r ${{ github.action_path }}/* .
+    - run: ./setup_mkdocs.sh
       shell: bash
