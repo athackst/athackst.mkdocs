@@ -7,6 +7,16 @@
             "label": "create mkdocs site",
             "type": "shell",
             "command": "cp mkdocs.yml mkdocs-tmp.yml && mkdocs_simple_gen --build --config-file mkdocs-tmp.yml"
+        },
+        {
+            "label": "serve mkdocs site",
+            "type": "shell",
+            "command": "cp mkdocs.yml mkdocs-tmp.yml && mkdocs_simple_gen --serve --config-file mkdocs-tmp.yml"
+        },
+        {
+            "label": "setup",
+            "type": "shell",
+            "command": "./.devcontainer/setup.sh"
         }
     ]
 }
