@@ -27,7 +27,7 @@ runs:
   steps:
     - id: get-repos
       run: |
-        echo "::set-output name=repository::$(.github/actions/list-repos/get_repos.sh)"
+        echo "repository=$(.github/actions/list-repos/get_repos.sh)" >> $GITHUB_OUTPUT
       shell: bash
       env:
         USER: ${{inputs.user}}
