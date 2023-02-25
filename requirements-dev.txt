@@ -1,1 +1,1 @@
-mkdocs-simple-plugin==2.2.0
+mkdocs-simple-plugin==2.3.0
