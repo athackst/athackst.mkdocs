@@ -1,5 +1,5 @@
 #!/bin/bash
 
-pip install --upgrade pip
-pip install --user -r requirements.txt
-pip install --user -r requirements-dev.txt
+pip3 install --upgrade pip
+pip3 install --user -r requirements.txt
+pip3 install --user -r requirements-dev.txt
