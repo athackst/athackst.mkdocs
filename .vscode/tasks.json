@@ -17,6 +17,19 @@
             "label": "setup",
             "type": "shell",
             "command": "./.devcontainer/setup.sh"
-        }
+        },
+        {
+            "label": "actions: get_repos",
+            "type": "shell",
+            "command": "./.github/actions/list-repos/get_repos.sh",
+            "options": {
+                "env": {
+                    "USER": "athackst",
+                    "PRIVATE": "false",
+                    "FORK": "false",
+                    "ARCHIVED": "false"
+                }
+            }
+        },
     ]
 }
