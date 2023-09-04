@@ -1,6 +1,6 @@
 mkdocs-awesome-pages-plugin==2.9.2
 mkdocs-macros-plugin==1.0.4
-mkdocs-material==9.2.6
+mkdocs-material==9.2.8
 mkdocs==1.5.2
 mkdocstrings==0.23.0
 mkdocstrings-python-legacy==0.2.3
