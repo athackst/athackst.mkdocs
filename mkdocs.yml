@@ -35,7 +35,6 @@ theme:
 markdown_extensions:
   - admonition
   - footnotes
-  - mkdocs-click
   - pymdownx.superfences
   - pymdownx.highlight:
       use_pygments: true
