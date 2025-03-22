@@ -46,6 +46,30 @@ This document is designed to cover **all** of the GitHub Flavored Markdown (GFM)
    2. Nested second item
 3. Third item
 
+## Challenging list
+
+Mixed list types
+
+1. Ordered item 1
+2. Ordered item 2
+
+* Unordered item 1
+* Unordered item 2
+
+Mixed paragraphs
+
+A Paragraph.
+* Not a list item.
+
+1. Ordered list item.
+* Not a separate list item.
+
+List starting at a number
+
+4. Apples
+5. Oranges
+6. Pears
+
 ---
 
 ## Code
@@ -95,9 +119,17 @@ You can also align text:
 
 ## Task Lists
 
+Simple task list to show completions.
+
 - [x] Completed task
 - [ ] Incomplete task
 - [ ] Another pending task
+
+You can also try to nest tasks lists
+
+- Tasks:
+  - [x] Write documentation
+  - [ ] Review pull request
 
 ---
 
@@ -120,7 +152,14 @@ Check out the [GitHub Flavored Markdown spec](https://github.github.com/gfm/).
 
 ### Autolink
 
+Place the link between `<>`
+
 <https://github.github.com/gfm/>
+
+or just add it as text
+
+Visit https://example.com for more information.
+
 
 ---
 
@@ -152,25 +191,7 @@ Emoji examples: 😄 🚀 🎉
 
 ---
 
-## Additional GFM Features
-
-### Strikethrough (again)
-
-~~This text is struck through.~~
-
-### Task List in a Nested List
-
-- Tasks:
-  - [x] Write documentation
-  - [ ] Review pull request
-
-### Automatic URL Linking
-
-Visit https://example.com for more information.
-
----
-
-## 14. Miscellaneous
+## Footnotes
 
 You can also include footnotes[^1] if your Markdown renderer supports them (note: GitHub does not support footnotes by default).
 
