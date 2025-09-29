@@ -15,7 +15,7 @@ jobs:
       repository: ${{ steps.list.outputs.repository }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Get repos list
         id: list
         uses: ./.github/actions/list-repos
