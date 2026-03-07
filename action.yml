@@ -1,7 +1,0 @@
-name: 'athackst mkdocs'
-description: 'Action to use unified settings for my repo'
-runs:
-  using: "composite"
-  steps:
-    - run: ${{ github.action_path }}/setup_mkdocs.sh
-      shell: bash
